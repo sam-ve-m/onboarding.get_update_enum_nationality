@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 
 from dotenv import load_dotenv
 from decouple import Config, RepositoryEnv
@@ -8,9 +9,10 @@ class Configuration:
     config = None
 
     @classmethod
-    def get_config(cls, env_path: str):
+    def get_config(cls, env_path: str = Path(__file__).parent.absolute()):
         path = os.path.join(env_path, ".env")
         path = str(path)
+        print(path)
         load_dotenv(path)
         cls.set_config(path)
 

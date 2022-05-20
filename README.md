@@ -28,10 +28,10 @@ docker images
 
 ## Run project
 
-Run the `deploy.sh`:
+Run in the project root folder:
 
 ```bash
-source deploy.sh
+fission spec apply
 ```
 
 ## Run tests
@@ -40,12 +40,4 @@ Run the `deploy.sh`:
 
 ```bash
 bash tests.sh
-```
-
-## Remove fission:
-
-Run the `remove_fission.sh`:
-
-```bash
-bash remove_fission.sh
 ```
