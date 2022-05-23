@@ -12,9 +12,9 @@ class EnumRepository(IEnumRepository):
 
     enum_query = """
             SELECT CODE as code, DESCRIPTION as description
-            FROM USPIXDB001.SINCAD_EXTERNAL_PROFESSIONAL
+            FROM USPIXDB001.SINCAD_EXTERNAL_NATIONALITY
         """
-    enum_key = "EnumActivityType"
+    enum_key = "EnumNationality"
 
     @classmethod
     def get_enums(cls) -> List[Tuple]:

@@ -17,5 +17,3 @@ def get_enums(request_=request) -> Response:
         status=HTTPStatus.OK
     )
     return response
-
-print(get_enums().data)

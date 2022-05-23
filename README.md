@@ -36,7 +36,7 @@ fission spec apply
 
 ## Run tests
 
-Run the `deploy.sh`:
+Run the `tests.sh`:
 
 ```bash
 bash tests.sh
