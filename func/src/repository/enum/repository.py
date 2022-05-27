@@ -1,7 +1,7 @@
 from typing import List, Tuple
 
 from src.core.interfaces.repository.enum.interface import IEnumRepository
-from src.repository.base_repository.cache.repository import CacheRepository
+from src.repository.cache.repository import CacheRepository
 from src.repository.base_repository.oracle.repository import OracleBaseRepository
 
 
@@ -14,7 +14,7 @@ class EnumRepository(IEnumRepository):
             SELECT CODE as code, DESCRIPTION as description
             FROM USPIXDB001.SINCAD_EXTERNAL_NATIONALITY
         """
-    enum_key = "EnumNationality"
+    enum_key = "jormungandr: EnumNationality"
 
     @classmethod
     def get_enums(cls) -> List[Tuple]:

@@ -33,6 +33,5 @@ def test_get_response_when_enums_are_none(get_enums_mock):
 @patch.object(EnumRepository, "get_enums")
 def test_get_response_when_enums_are_invalid(get_enums_mock):
     get_enums_mock.side_effect = Exception("Erroooooou!")
-    with pytest.raises(Exception) as error:
-        result = EnumService.get_response()
-        assert result == enum_service_response_invalid
+    result = EnumService.get_response()
+    assert result == enum_service_response_invalid

@@ -9,12 +9,13 @@ from src.core.status_codes.code_enums import StatusCode
 class EnumService(IEnumService):
     @classmethod
     def get_response(cls):
-        enums = EnumRepository.get_enums()
         service_response = []
 
         try:
+            enums = EnumRepository.get_enums()
             for code, value in enums:
                 service_response.append({"code": code, "value": value})
+
         except TypeError:
             Gladsheim.error(
                 error=TypeError(), message="Data not found or inconsistent."
