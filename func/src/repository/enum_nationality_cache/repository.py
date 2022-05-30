@@ -1,5 +1,6 @@
 from typing import Union
 
+from etria_logger import Gladsheim
 from mnemosine import SyncCache
 
 from src.core.interfaces.repository.enum_nationality_cache.interface import (
@@ -15,9 +16,14 @@ class EnumNationalityCacheRepository(IEnumNationalityCacheRepository):
         try:
             SyncCache.save(cls.enum_key, list(enum_nationality), int(time))
             return True
-        except ValueError:
+        except ValueError as error:
+            Gladsheim.error(error=error, message="Error saving enum in cache.")
             return False
-        except TypeError:
+        except TypeError as error:
+            Gladsheim.error(error=error, message="Error saving enum in cache.")
+            return False
+        except Exception as error:
+            Gladsheim.error(error=error, message="Error saving enum in cache.")
             return False
 
     @classmethod
