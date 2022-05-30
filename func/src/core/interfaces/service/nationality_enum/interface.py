@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class IEnumService(ABC):
+class INationalityEnumService(ABC):
     @abstractmethod
     def get_response(self):
         pass

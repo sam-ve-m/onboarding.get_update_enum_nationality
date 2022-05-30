@@ -5,12 +5,8 @@ main_response_dummy = main_service_response_dummy.encode()
 
 # Doubles of: src.service.enum.service
 
-enum_service_get_enums_response_ok = [
-    (1, "BRASILEIRO NATO"),
-    (2, "BRASILEIRO NATURALIZADO"),
-    (3, "ESTRANGEIRO"),
-]
-enum_service_response_ok = '{"result": [{"code": 1, "value": "BRASILEIRO NATO"}, {"code": 2, "value": "BRASILEIRO NATURALIZADO"}, {"code": 3, "value": "ESTRANGEIRO"}], "message": null, "success": true, "code": 0}'
+enum_service_get_enums_response_ok = [(1, "Enum"), (2, "Enum2"), (3, "Enum3")]
+enum_service_response_ok = '{"result": [{"code": 1, "value": "Enum"}, {"code": 2, "value": "Enum2"}, {"code": 3, "value": "Enum3"}], "message": null, "success": true, "code": 0}'
 enum_service_get_enums_response_none = None
 enum_service_response_none = '{"result": [], "message": "Data not found or inconsistent.", "success": false, "code": 99}'
 enum_service_get_enums_response_invalid = [(1)]
