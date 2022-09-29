@@ -35,7 +35,7 @@ spec:
   InvokeStrategy:
     ExecutionStrategy:
       ExecutorType: newdeploy
-      MaxScale: 1
+      MaxScale: 3
       MinScale: 1
       SpecializationTimeout: 120
       TargetCPUPercent: 80
@@ -51,5 +51,5 @@ spec:
     packageref:
       name: fn-get-nationality-0ade5ff3-06ce-473d-b831-e6ae8789fa79
       namespace: default
-  requestsPerPod: 1
+  requestsPerPod: 10000
   resources: {}
