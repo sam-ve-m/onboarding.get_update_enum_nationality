@@ -1,35 +1,35 @@
 include:
-- ./func/*
+- fission.py
 kind: ArchiveUploadSpec
-name: func-zOUI
+name: fission-py-YApx
 
 ---
 apiVersion: fission.io/v1
 kind: Package
 metadata:
   creationTimestamp: null
-  name: fn-get-nationality-0ade5ff3-06ce-473d-b831-e6ae8789fa79
+  name: onb-br-enum-nationality-fn-a77e83fd-1f34-4dce-8759-118c9e8c610d
   namespace: default
 spec:
   deployment:
     checksum: {}
+    type: url
+    url: archive://fission-py-YApx
   environment:
-    name: env-get-nationality
+    name: onb-br-enum-nationality-env
     namespace: default
   source:
     checksum: {}
-    type: url
-    url: archive://func-zOUI
 status:
-  buildstatus: pending
-  lastUpdateTimestamp: "2022-05-26T15:30:11Z"
+  buildstatus: none
+  lastUpdateTimestamp: "2023-01-05T15:28:18Z"
 
 ---
 apiVersion: fission.io/v1
 kind: Function
 metadata:
   creationTimestamp: null
-  name: fn-get-nationality
+  name: onb-br-enum-nationality-fn
   namespace: default
 spec:
   InvokeStrategy:
@@ -38,18 +38,24 @@ spec:
       MaxScale: 3
       MinScale: 1
       SpecializationTimeout: 120
-      TargetCPUPercent: 80
+      TargetCPUPercent: 0
+      hpaMetrics:
+      - resource:
+          name: cpu
+          target:
+            averageUtilization: 80
+            type: Utilization
+        type: Resource
     StrategyType: execution
   concurrency: 500
   environment:
-    name: env-get-nationality
+    name: onb-br-enum-nationality-env
     namespace: default
   functionTimeout: 60
   idletimeout: 120
   package:
-    functionName: main.get_enums
     packageref:
-      name: fn-get-nationality-0ade5ff3-06ce-473d-b831-e6ae8789fa79
+      name: onb-br-enum-nationality-fn-a77e83fd-1f34-4dce-8759-118c9e8c610d
       namespace: default
   requestsPerPod: 10000
   resources: {}
