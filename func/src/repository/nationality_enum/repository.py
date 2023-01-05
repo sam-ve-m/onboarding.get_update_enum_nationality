@@ -1,8 +1,8 @@
 from typing import List, Tuple
 
-from src.core.interfaces.repository.nationality_enum.interface import INationalityEnumRepository
-from src.repository.enum_nationality_cache.repository import EnumNationalityCacheRepository
-from src.repository.base_repository.oracle.repository import OracleBaseRepository
+from func.src.core.interfaces.repository.nationality_enum.interface import INationalityEnumRepository
+from func.src.repository.enum_nationality_cache.repository import EnumNationalityCacheRepository
+from func.src.repository.base_repository.oracle.repository import OracleBaseRepository
 
 
 class NationalityEnumRepository(INationalityEnumRepository):
