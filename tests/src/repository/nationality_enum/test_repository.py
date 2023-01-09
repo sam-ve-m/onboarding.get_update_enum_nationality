@@ -1,6 +1,6 @@
-from src.repository.nationality_enum.repository import NationalityEnumRepository
-from src.repository.enum_nationality_cache.repository import EnumNationalityCacheRepository
-from src.repository.base_repository.oracle.repository import OracleBaseRepository
+from func.src.repository.nationality_enum.repository import NationalityEnumRepository
+from func.src.repository.enum_nationality_cache.repository import EnumNationalityCacheRepository
+from func.src.repository.base_repository.oracle.repository import OracleBaseRepository
 from tests.test_doubles.doubles import (
     enum_repository_get_cached_enum_dummy,
     enum_repository_get_from_cache_dummy_none,

@@ -4,18 +4,18 @@ from pathlib import Path
 from etria_logger import Gladsheim
 from flask import request, Response, Request
 
-from src.domain.response.status_code.enums import StatusCode
-from src.infrastructure.env_config import Configuration
+from func.src.domain.response.status_code.enums import StatusCode
+from func.src.infrastructure.env_config import Configuration
 
 Configuration.get_config(
     env_path=Path(__file__).parent.absolute()
 )  # This line is important to load the environment variables needed by the project!
 
-from src.domain.response.model import ResponseModel
-from src.service.nationality_enum.service import NationalityEnumService
+from func.src.domain.response.model import ResponseModel
+from func.src.service.nationality_enum.service import NationalityEnumService
 
 
-def get_enums(request_: Request = request) -> Response:
+async def get_enums(request_: Request = request) -> Response:
     try:
         service_response = NationalityEnumService.get_response()
         response = ResponseModel.build_http_response(
